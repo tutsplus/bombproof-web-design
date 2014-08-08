@@ -1,0 +1,33 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.boxshadow_auto {
+  -webkit-box-shadow: 3px 3px 3px 1px #9c9c9c;
+  box-shadow: 3px 3px 3px 1px #9c9c9c;
+}
+:fullscreen a {
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  -ms-transition: -ms-transform 1s;
+  transition: transform 1s;
+}
+.grid {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+}
+.grid-cell {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}

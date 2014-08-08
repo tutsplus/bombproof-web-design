@@ -1,0 +1,10 @@
+		<div style="display:none;" class="message" id="operamini">
+		<p>Sorry, but this website does not support Opera Mini. Please switch to another browser such as Opera for Android, Chrome, Firefox, or Safari.</p>
+		</div>
+
+		<script type="text/javascript">
+			var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
+			if (isOperaMini){ 
+				jQuery("#operamini").show(); 
+			}
+		</script>

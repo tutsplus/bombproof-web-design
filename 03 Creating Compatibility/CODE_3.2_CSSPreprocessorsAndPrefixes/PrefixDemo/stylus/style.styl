@@ -1,0 +1,162 @@
+// **********
+// IMPORTS
+// **********
+
+
+@import "lib/normalize"
+@import "nib"
+
+
+// **********
+// MIXINS
+// **********
+
+
+rspn-width(NUM)
+	max-width unit( NUM, px )
+	max-width unit( NUM * $px, rem )
+	width 100%
+
+h_tags()
+	h1, h2, h3, h4, h5, h6
+			font-family $type_h_font_family
+			line-height $type_h_font_lineheight	
+	for h_lvl, value in $type_h_font_sizes
+		{h_lvl}
+			font-size unit( value, rem )
+			margin unit( $type_h_font_vmargins[h_lvl], em ) 0
+
+
+// **********
+// VARS
+// **********
+
+
+$base_font_size = 16
+//standard default browser size is 16px, so this brings base font size to 18px while keeping things flexible for user
+$base_font_size_ems = unit($base_font_size / 16, em)
+
+$px = unit(1 / $base_font_size, rem)
+
+$px_em = unit(1 / $base_font_size, em)
+
+$phi = 1.618
+
+$type_regular_font_family = 'Open Sans'
+$type_h_font_family = 'Open Sans'
+
+// Headings use classic typographic scale: if default 16px total size scale would be:
+// 9px, 10px, 11px, 12px, 16px, 18px, 21px, 24px, 36px, 48px, 60px, 72px
+
+$type_h_font_sizes = {
+	'h1': 3,
+	'h2': 2.25,
+	'h3': 1.5,
+	'h4': 1.313,
+	'h5': 1.125,
+	'h6': 1
+}
+
+$type_h_font_vmargins = {
+	'h1': 0.563,
+	'h2': 0.625,
+	'h3': 1.313,
+	'h4': 1.313,
+	'h5': 1.313,
+	'h6': 0.75
+}
+
+$type_h_font_lineheight = 1.313em
+
+$type_wrapper_font_size = 18 * $px
+
+$layout_site_width = 1200
+//point of irredeemable illegibility
+$layout_POII = 12rem
+$layout_default_padding = unit( 2*$phi, em)
+
+$color_site_bg = #F0F0F0
+$color_wrapper_bg = #fff
+
+$color_text_default = lighten( black, 15%)
+$color_link_default = #e3514e
+$color_link_hover = saturate($color_link_default, 70%)
+
+
+// **********
+//  ELEMENTS 
+// **********
+
+
+*
+	// box-sizing: border-box
+
+html
+	font-size $base_font_size_ems
+	font-family $type_regular_font_family
+	background-color $color_site_bg
+	color $color_text_default
+
+img
+	max-width 100%
+	height auto
+
+a, a:link, a:visited
+	// text-decoration none
+	color $color_link_default
+
+a:hover, a:active
+	// text-decoration none
+	color $color_link_hover
+
+//H tag font family, size, line-height, margin
+h_tags()
+
+
+// **********
+// CLASSES and IDs
+// **********
+
+
+.wrapper
+	width 500px
+	margin unit($phi, em) auto
+	padding $layout_default_padding
+	background-color $color_wrapper_bg
+	border 3px solid lighten($color_text_default, 80%)
+
+.message
+	background-color #c00
+	text-align center
+	color white
+	padding 0.25em
+	a, a:visited
+		font-weight bold
+		color white
+
+// **********
+// QUERIES
+// **********
+
+
+// $query_01 = "(max-width: " + 1200 * $px + ")"
+
+// @media $query_01
+	
+
+
+// $query_02 = "(max-width: " + 1000 * $px + ")"
+
+// @media $query_02
+
+
+
+// $query_03 = "(max-width: " + 800 * $px + ")"
+
+// @media $query_03
+	
+
+
+// $query_04 = "(max-width: " + 500 * $px + ")"
+
+// @media $query_04
